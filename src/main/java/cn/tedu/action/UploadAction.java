@@ -14,7 +14,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 @Scope("prototype")
 public class UploadAction extends BaseAction{
-	
+	//test git
 	private File upfile;
 	
 	private String upfileFileName;//***FileName，***代表文件upfile文件名
@@ -57,7 +57,7 @@ public class UploadAction extends BaseAction{
 	
 	public String execute() throws IOException{
 		//取得文件上传路径（用于存放上传的文件）  
-        File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("upload"));  
+        File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("upload"));
         //File uploadFile = new File("D://lzt");
         //判断上述路径是否存在，如果不存在则创建该路径  
         if (!uploadFile.exists()) { 
