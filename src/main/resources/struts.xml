@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	 <!-- 上传文件是所允许的文件最大值 -->  
+    <constant name="struts.multipart.maxSize" value="40000000"></constant>  
+    <!-- 设置文件上传时的临时文件夹时d盘下的temp文件夹 -->  
+    <constant name="struts.multipart.saveDir" value="D:\\temp"></constant>  
+    
+	<package namespace="/upload" name="/upload" extends="struts-default">
+		 <action name="toUpload">
+		 	<result>/WEB-INF/upload.jsp</result>
+		 </action>
+		  <action name="upfile" class="uploadAction">  
+            <result name="success">/WEB-INF/success.jsp</result>  
+            <result name="error">/WEB-INF/error.jsp</result>  
+            <param name="maximumSize">1000000</param>  
+            <param name="allowedExtensions">png,jpg</param> 
+        </action>  
+	</package>	
+</struts>
+
+
+
